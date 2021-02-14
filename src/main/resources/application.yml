@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${REVATURE_DB_URL}/CenkReklam
+    password: ${REVATURE_DB_PASSWORD}
+    username: orkundb
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+    hibernate: 
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+        jdbc:
+          lob:
+            non_contextual_creation: true    
+            
+server:
+  port: 3535
