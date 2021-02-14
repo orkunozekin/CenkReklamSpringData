@@ -1,5 +1,4 @@
 package com.cr.model;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,9 +12,8 @@ import javax.persistence.Table;
 import lombok.Data;
 
 
-
 @Entity
-@Table
+@Table(name="images")
 @Data
 public class Image {
 	
@@ -32,13 +30,15 @@ public class Image {
 	private String imageURL;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "album_id", nullable = false)
+	@JoinColumn(name = "service_id", nullable = false)
 	private Service serviceId;
+
+
 	
 	
 	//CONSTRUCTORS
 	public Image() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 
@@ -106,7 +106,5 @@ public class Image {
 	}
 
 
-	
-	
 	
 }

@@ -23,11 +23,6 @@ public class ServiceController {
 	private ServiceRepository serviceRepo;
 	
 	
-	@Autowired
-	public ServiceController(ServiceRepository serviceRepo) {
-		super();
-		this.serviceRepo = serviceRepo;
-	}
 	
 	
 	@GetMapping("/allServices")
@@ -54,6 +49,26 @@ public class ServiceController {
 		return "Deletion has failed. Id is null.";
 	}
 	
+	
+	public ServiceController() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	@Autowired
+	public ServiceController(ServiceRepository serviceRepo) {
+		this.serviceRepo = serviceRepo;
+	}
+
+
+	public ServiceRepository getServiceRepo() {
+		return serviceRepo;
+	}
+
+
+	public void setServiceRepo(ServiceRepository serviceRepo) {
+		this.serviceRepo = serviceRepo;
+	}
 	
 	
 	

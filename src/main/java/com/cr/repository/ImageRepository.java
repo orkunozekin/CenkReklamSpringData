@@ -5,13 +5,12 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.cr.model.Service;
+import com.cr.model.Image;
 
 @Repository
-public interface ServiceRepository extends JpaRepository<Service, Long>{
+public interface ImageRepository extends JpaRepository<Image, Long>{
 	
-	//Get
-	public List<Service> findAll();
-	public Service findByServiceId(long id);
+	public List<Image> findAll();
+	public Image findByImageId(long id);
 	
 }

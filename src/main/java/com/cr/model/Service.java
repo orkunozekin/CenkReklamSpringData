@@ -17,7 +17,8 @@ import lombok.Data;
 
 
 @Entity
-@Table
+@Table(name="services")
+@Data
 public class Service {
 	
 	@Id
@@ -33,11 +34,9 @@ public class Service {
 	private Set<Image> images;
 	
 	
-	//CONSTRUCTORS
 	public Service() {
 		// TODO Auto-generated constructor stub
 	}
-
 
 
 	public Service(long serviceId, String serviceName, Set<Image> images) {
@@ -48,18 +47,9 @@ public class Service {
 	}
 
 
-	public Service(String serviceName, Set<Image> images) {
-		super();
-		this.serviceName = serviceName;
-		this.images = images;
-	}
-
-
-
 	public long getServiceId() {
 		return serviceId;
 	}
-
 
 
 	public void setServiceId(long serviceId) {
@@ -67,11 +57,9 @@ public class Service {
 	}
 
 
-
 	public String getServiceName() {
 		return serviceName;
 	}
-
 
 
 	public void setServiceName(String serviceName) {
@@ -79,26 +67,14 @@ public class Service {
 	}
 
 
-
 	public Set<Image> getImages() {
 		return images;
 	}
 
 
-
 	public void setImages(Set<Image> images) {
 		this.images = images;
 	}
-
-
-
-	@Override
-	public String toString() {
-		return "Service [serviceId=" + serviceId + ", serviceName=" + serviceName + ", images=" + images + "]";
-	}
-	
-	
-
 	
 	
 }
